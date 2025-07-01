@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6778c074-c329-4ec3-950e-1aaaa1865602" name="Changes" comment="" />
+    <list default="true" id="6778c074-c329-4ec3-950e-1aaaa1865602" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/oop_quiz_creator_project_reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oop_quiz_creator_project.py" beforeDir="false" afterPath="$PROJECT_DIR$/oop_quiz_creator_project.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
