@@ -46,3 +46,15 @@ class QuizPlayer:
                 except pygame.error as e:
                     print(f"{Fore.YELLOW}Error playing wrong sound: {e}")
 
+    def cleanup(self):
+        if hasattr(self, 'correct_sound'):
+            del self.correct_sound
+        if hasattr(self, 'wrong_sound'):
+            del self.wrong_sound
+        pygame.mixer.quit()
+
+    def run(self):
+        if not self.questions:
+            print(f"{Fore.YELLOW}No questions available!")
+            return
+

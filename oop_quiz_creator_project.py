@@ -53,3 +53,18 @@ class QuizCreator:
         if question.lower() == 'exit':
             return None
 
+        choices = {}
+        for letter in ['a', 'b', 'c', 'd']:
+            choices[letter] = input(f"{Fore.CYAN}Choice {letter}: ")
+
+        while True:
+            correct_answer = input(Fore.LIGHTMAGENTA_EX + "Correct answer: ").lower()
+            if correct_answer in ['a', 'b', 'c', 'd']:
+                break
+            print(Fore.RED + "Please enter a, b, c, or d.")
+
+        return {
+            'question': question,
+            'choices': choices,
+            'correct_answer': correct_answer
+        }
