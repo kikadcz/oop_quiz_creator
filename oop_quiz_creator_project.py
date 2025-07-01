@@ -68,3 +68,18 @@ class QuizCreator:
             'choices': choices,
             'correct_answer': correct_answer
         }
+
+        def save_to_file(self, data):
+            try:
+                with open(self.filename, "a", encoding='utf-8') as file:
+                    file.write(f"\nQuestion:\n{data['question']}\n")
+                    for letter, choice in data['choices'].items():
+                        file.write(f"({letter}) {choice}\n")
+                    file.write(f"\nAnswer: {data['correct_answer']}\n{'-' * 30}\n")
+
+                if self.bong_sound:
+                    self.bong_sound.play()
+
+            except IOError as e:
+                print(Fore.RED + f"Error saving to file: {str(e)}")
+
