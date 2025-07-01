@@ -19,29 +19,9 @@ class QuizCreator:
             print(f"Error generating ASCII art: {str(e)}")
 
     def init_sound(self):
-        try:
-            pygame.mixer.init()
-            pygame.mixer.music.load("bg_music.mp3")
-            pygame.mixer.music.play(-1)
-            self.bong_sound = pygame.mixer.Sound("bong.wav")
-        except Exception as audio_error:
-            print(Fore.RED + f"\nWarning: Sound initialization failed ({str(audio_error)}). "
-                             "Continuing without sound effects.")
+        pygame.mixer.quit()  # Ensure mixer is stopped
+        pygame.mixer.init(44100, -16, 2, 2048)  # Initialize with proper parameters
 
-    def cleanup_resources(self):
-        """Clean up pygame mixer resources"""
-        try:
-            pygame.mixer.music.stop()
-            if self.bong_sound:
-                self.bong_sound.stop()
-            pygame.mixer.quit()
-        except Exception as e:
-            print(Fore.RED + f"Error cleaning up sound resources: {str(e)}")
-
-    def get_question_and_choices(self):
-        print("Type 'exit' to quit.")
-        try:
-            question = input(Fore.GREEN + "Enter your quiz question: ")
-            if question.lower() == 'exit':
-                return None
+        music_files = ["bg_music.ogg", "bg_music.mp3"]
+        loaded = False
 

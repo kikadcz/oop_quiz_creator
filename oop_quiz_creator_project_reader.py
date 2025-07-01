@@ -22,3 +22,11 @@ class QuizPlayer:
         try:
             self.correct_sound = pygame.mixer.Sound("correct.wav")
             self.wrong_sound = pygame.mixer.Sound("wrong.wav")
+
+            self.correct_sound.set_volume(0.5)
+            self.wrong_sound.set_volume(0.5)
+
+        except Exception as error:
+            print(f"{Fore.RED}Sound Error: {error}")
+            self.correct_sound = None
+            self.wrong_sound = None
