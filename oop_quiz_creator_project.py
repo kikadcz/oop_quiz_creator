@@ -44,3 +44,4 @@ class QuizCreator:
             question = input(Fore.GREEN + "Enter your quiz question: ")
             if question.lower() == 'exit':
                 return None
+
