@@ -83,3 +83,22 @@ class QuizCreator:
             except IOError as e:
                 print(Fore.RED + f"Error saving to file: {str(e)}")
 
+        def run(self):
+            self.print_header()
+
+            try:
+                while True:
+                    data = self.get_question_and_choices()
+                    if data is None:
+                        print(Fore.YELLOW + "Thanks for using Quizzatron 3000!")
+                        break
+
+                    self.save_to_file(data)
+                    print(Fore.GREEN + "Question saved successfully.")
+
+            finally:
+                self.cleanup()
+
+ if __name__ == "__main__":
+     creator = QuizCreator()
+     creator.run()

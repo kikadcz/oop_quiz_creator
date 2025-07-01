@@ -86,3 +86,12 @@ class QuizPlayer:
         finally:
             self.cleanup()
 
+if __name__ == "__main__":
+    print(f"{Fore.LIGHTBLUE_EX}\nWelcome to Quizzatron 3000: Game Saga")
+    game = QuizPlayer()
+    try:
+        game.run()
+    except KeyboardInterrupt:
+        print("\nGame interrupted by user!")
+    finally:
+        game.cleanup()
