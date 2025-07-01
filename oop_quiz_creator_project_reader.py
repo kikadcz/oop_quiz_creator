@@ -31,3 +31,17 @@ class QuizPlayer:
             self.correct_sound = None
             self.wrong_sound = None
 
+    def play_sound(self, sound_type: str):
+
+        if sound_type == "correct":
+            if self.correct_sound:
+                try:
+                    self.correct_sound.play()
+                except pygame.error as e:
+                    print(f"{Fore.YELLOW}Error playing correct sound: {e}")
+        elif sound_type == "wrong":
+            if self.wrong_sound:
+                try:
+                    self.wrong_sound.play()
+                except pygame.error as e:
+                    print(f"{Fore.YELLOW}Error playing wrong sound: {e}")
