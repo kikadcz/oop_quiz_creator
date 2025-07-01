@@ -18,3 +18,12 @@ class QuizCreator:
             print(Fore.RED + "QUIZZATRON 3000")
             print(f"Error generating ASCII art: {str(e)}")
 
+    def init_sound(self):
+        try:
+            pygame.mixer.init()
+            pygame.mixer.music.load("bg_music.mp3")
+            pygame.mixer.music.play(-1)
+            self.bong_sound = pygame.mixer.Sound("bong.wav")
+        except Exception as audio_error:
+            print(Fore.RED + f"\nWarning: Sound initialization failed ({str(audio_error)}). "
+                             "Continuing without sound effects.")
