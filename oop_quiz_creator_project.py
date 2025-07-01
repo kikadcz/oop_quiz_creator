@@ -40,3 +40,16 @@ class QuizCreator:
             self.bong_sound.set_volume(0.5)  # Set reasonable volume
         except Exception as e:
             print(Fore.YELLOW + f"Warning: Could not load bong sound: {str(e)}")
+
+    def cleanup(self):
+        """Clean up resources when program exits"""
+        if hasattr(self, 'bong_sound'):
+            del self.bong_sound
+        pygame.mixer.quit()
+
+    def get_question_and_choices(self):
+        print("Type 'exit' to quit.")
+        question = input(Fore.GREEN + "Enter your quiz question: ")
+        if question.lower() == 'exit':
+            return None
+

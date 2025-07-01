@@ -45,3 +45,4 @@ class QuizPlayer:
                     self.wrong_sound.play()
                 except pygame.error as e:
                     print(f"{Fore.YELLOW}Error playing wrong sound: {e}")
+
