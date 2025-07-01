@@ -85,3 +85,4 @@ class QuizPlayer:
 
         finally:
             self.cleanup()
+
