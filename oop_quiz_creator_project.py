@@ -25,3 +25,18 @@ class QuizCreator:
         music_files = ["bg_music.ogg", "bg_music.mp3"]
         loaded = False
 
+        for music_file in music_files:
+            try:
+                pygame.mixer.music.load(music_file)
+                pygame.mixer.music.play(-1)
+                print(Fore.GREEN + f"Successfully loaded background music from {music_file}")
+                loaded = True
+                break
+            except Exception as e:
+                print(Fore.YELLOW + f"Warning: Could not load {music_file}: {str(e)}")
+
+        try:
+            self.bong_sound = pygame.mixer.Sound("bong.wav")
+            self.bong_sound.set_volume(0.5)  # Set reasonable volume
+        except Exception as e:
+            print(Fore.YELLOW + f"Warning: Could not load bong sound: {str(e)}")

@@ -30,3 +30,4 @@ class QuizPlayer:
             print(f"{Fore.RED}Sound Error: {error}")
             self.correct_sound = None
             self.wrong_sound = None
+
